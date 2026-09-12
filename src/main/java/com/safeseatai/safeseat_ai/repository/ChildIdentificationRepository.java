@@ -1,0 +1,9 @@
+package com.safeseatai.safeseat_ai.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.safeseatai.safeseat_ai.model.ChildIdentification;
+
+public interface ChildIdentificationRepository extends JpaRepository<ChildIdentification, Long>{
+
+}
