@@ -16,7 +16,7 @@ import com.safeseatai.safeseat_ai.service.AttendanceService;
 
 @RestController
 @RequestMapping("/api/attendance")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "*")
 public class AttendanceController {
 
     @Autowired
