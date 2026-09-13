@@ -8,7 +8,7 @@ import com.safeseatai.safeseat_ai.model.User;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    User findByEmail(String email);
+    User findFirstByEmailOrderByIdAsc(String email);
 
     List<User> findByRole(String role);
 }

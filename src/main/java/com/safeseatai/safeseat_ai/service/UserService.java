@@ -26,8 +26,7 @@ public class UserService {
 //    // =========================
     public User loginUser(String email, String password) {
 
-        User user = userRepository.findByEmail(email);
-
+    	User user = userRepository.findFirstByEmailOrderByIdAsc(email);
         if (user == null) {
             return null;
         }
