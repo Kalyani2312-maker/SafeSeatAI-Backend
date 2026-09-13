@@ -21,20 +21,27 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    // =========================
-    // LOGIN
-    // =========================
+//    // =========================
+//    // LOGIN
+//    // =========================
     public User loginUser(String email, String password) {
 
         User user = userRepository.findByEmail(email);
 
-        if (user != null && user.getPassword().equals(password)) {
-            return user;
+        if (user == null) {
+            return null;
         }
 
-        return null;
-    }
+        if (user.getPassword() == null) {
+            return null;
+        }
 
+        if (!user.getPassword().equals(password)) {
+            return null;
+        }
+
+        return user;
+    }
     // =========================
     // GET ALL USERS
     // =========================
