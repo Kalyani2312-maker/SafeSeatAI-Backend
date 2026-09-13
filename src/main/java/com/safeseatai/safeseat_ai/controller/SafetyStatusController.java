@@ -15,21 +15,22 @@ import com.safeseatai.safeseat_ai.service.SafetyStatusService;
 
 @RestController
 @RequestMapping("/api/safety")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "*")
 public class SafetyStatusController {
-	 @Autowired
-	    private SafetyStatusService safetyService;
 
-	    @PostMapping("/check")
-	    public SafetyStatus checkSafety(
-	            @RequestBody SafetyStatus status) {
+    @Autowired
+    private SafetyStatusService safetyService;
 
-	        return safetyService.checkSafety(status);
-	    }
+    @PostMapping("/check")
+    public SafetyStatus checkSafety(
+            @RequestBody SafetyStatus status) {
 
-	    @GetMapping
-	    public List<SafetyStatus> getAllSafetyStatus() {
+        return safetyService.checkSafety(status);
+    }
 
-	        return safetyService.getAllSafetyStatus();
-	    }
+    @GetMapping
+    public List<SafetyStatus> getAllSafetyStatus() {
+
+        return safetyService.getAllSafetyStatus();
+    }
 }
