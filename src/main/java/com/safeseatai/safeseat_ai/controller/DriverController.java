@@ -17,7 +17,7 @@ import com.safeseatai.safeseat_ai.service.DriverService;
 
 @RestController
 @RequestMapping("/api/drivers")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "*")
 public class DriverController {
 	private final DriverService driverService;
 
